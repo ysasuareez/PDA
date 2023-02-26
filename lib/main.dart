@@ -1,16 +1,16 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/material.dart';
-import 'package:restaurante/pages/login_page.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:restaurante/pages/tables_page.dart';
-import 'firebase_options.dart';
+import 'package:flutter/material.dart';
+import 'package:restaurante/firebase_options.dart';
+import 'package:restaurante/pages/login_page.dart';
 
 void main() async {
+  // Inicia Firebase
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(MyApp());
+
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -23,23 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: LoginPage(),
+      home: const LoginPage(),
     );
-  }
-
-  Future<List> getMesas() async {
-    FirebaseFirestore db = FirebaseFirestore.instance;
-
-    List tables = [];
-
-    CollectionReference collectionReferenceTables =
-        db.collection('customTable');
-    QuerySnapshot queryTables = await collectionReferenceTables.get();
-
-    queryTables.docs.forEach((documento) {
-      tables.add(documento.data());
-    });
-    print(tables);
-    return tables;
   }
 }
