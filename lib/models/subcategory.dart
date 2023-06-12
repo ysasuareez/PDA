@@ -1,7 +1,7 @@
 import 'item.dart';
 
-/// Modelo de una subcategoría
-/// Las categorías almacenan subcategorías que a su vez almacenan los items
+/// Represents a subcategory model.
+/// Categories store subcategories, which in turn store items.
 class Subcategory {
   final String id;
   final String name;

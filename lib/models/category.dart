@@ -1,6 +1,7 @@
 import 'subcategory.dart';
 
-/// Modelo de una categoría
+/// Represents a category.
+/// Categories contain subcategories, which in turn contain items.
 class Category {
   final String id;
   final String name;
