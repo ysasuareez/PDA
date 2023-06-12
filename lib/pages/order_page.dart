@@ -213,7 +213,7 @@ class OrdersPageState extends State<OrdersPage> {
                             padding: const EdgeInsets.all(8),
                             child: SizedBox(
                               width: 60,
-                              child: Text("${item.totalPirce}€",
+                              child: Text("${item.totalPrice}€",
                                   style: const TextStyle(fontSize: 17)),
                             ),
                           ),
